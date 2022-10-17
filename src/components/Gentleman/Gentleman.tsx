@@ -1,5 +1,5 @@
+import { useState } from "react";
 import GentlemanStructure from "../../types";
-import Button from "../Button/Button";
 import "./Gentleman.css";
 
 interface GentlemanProps {
@@ -9,8 +9,17 @@ interface GentlemanProps {
 const Gentleman = ({
   gentleman: { name, picture, alternativeText, profession, status, twitter },
 }: GentlemanProps): JSX.Element => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const toggleStatus = () => {
+    setIsSelected(!isSelected);
+  };
+
   return (
-    <li className="gentleman">
+    <li
+      className={`gentleman ${isSelected ? " selected" : ""}`}
+      onClick={toggleStatus}
+    >
       <div className="gentleman__avatar-container">
         <img
           className="gentleman__avatar"
@@ -34,7 +43,7 @@ const Gentleman = ({
           </li>
         </ul>
       </div>
-      <Button />
+      <i className="icon gentleman__icon fas fa-check"></i>
       <i className="icon gentleman__icon gentleman__icon--delete fas fa-times"></i>
     </li>
   );

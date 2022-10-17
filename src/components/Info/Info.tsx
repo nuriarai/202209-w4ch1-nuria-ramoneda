@@ -6,12 +6,14 @@ interface InfoProps {
 }
 
 const Info = ({ text, number }: InfoProps): JSX.Element => {
+  const select = () => {};
+
   return (
     <section className="controls">
       <p className="info">
         {number} {text}
       </p>
-      <Button />
+      <Button className="button" text="Select all" action={select} />
     </section>
   );
 };
