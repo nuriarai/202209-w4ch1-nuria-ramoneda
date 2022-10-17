@@ -1,4 +1,3 @@
-import { JsxElement } from "typescript";
 import "./Button.css";
 
 const Button = (): JSX.Element => {
