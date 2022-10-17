@@ -1,9 +1,15 @@
 import "./Button.css";
 
-const Button = (): JSX.Element => {
+interface ButtonProps {
+  text: string;
+  className: string;
+  action?: () => void;
+}
+
+const Button = ({ text, className, action }: ButtonProps): JSX.Element => {
   return (
-    <button className="button">
-      <i className="icon gentleman__icon fas fa-check"></i>
+    <button className={`button ${className}`} onClick={action}>
+      {text}
     </button>
   );
 };
