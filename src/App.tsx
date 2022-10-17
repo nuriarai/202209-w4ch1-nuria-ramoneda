@@ -1,12 +1,14 @@
 import "./App.css";
-import Button from "./components/Button/Button";
+import Gentleman from "./components/Gentleman/Gentleman";
+import gentlemen from "./data/gentlemen";
 
 function App() {
   return (
-    <>
-      <h1>Señoros React</h1>
-      <Button />
-    </>
+    <div className="container">
+      <ul>
+        <Gentleman gentleman={gentlemen[0]} />
+      </ul>
+    </div>
   );
 }
 
